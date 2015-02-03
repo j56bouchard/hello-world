@@ -1,0 +1,75 @@
+<HTML>
+	<HEAD>
+		<TITLE>
+			ACG DB Utility
+		</TITLE>
+	</HEAD>
+	<BODY>
+		<LEFT>
+			<H1>
+				ACG Database Maintenance Utility
+			</H1>
+
+			<FORM name="form1" method="post" ACTION="db_fileUpload.php" enctype="multipart/form-data">
+				<INPUT type="hidden" name="button">
+				
+				<FIELDSET>
+				<LEGEND><h2>Populate Database</h2></LEGEND>
+				<BR>
+				<INPUT type="file" NAME="userfile">	
+				<br><br>
+				<INPUT type="button" value="Populate Database" onclick="populate()">
+				<BR>
+				</FIELDSET>
+				<br> <br>
+				
+				<FIELDSET>
+				<LEGEND><h2>Modify Database</h2></LEGEND>
+				<BR>
+				<INPUT type="file" NAME="userfile">	
+				<br><br>
+				<INPUT type="button" value="Modify Database" onclick="update()">
+				<BR>
+				</FIELDSET>
+				<br> <br>
+				
+				<FIELDSET>
+				<LEGEND><h2>Query Database</h2></LEGEND>
+				<br>
+				<p>Select Product Type</p>
+				<SELECT name="sel_type">
+					<OPTION value="Three Phase" selected> Three Phase PDU</OPTION>
+					<OPTION value="Single Phase"> Single Phase PDU</OPTION>
+					<OPTION value="Multi Phase" > Multi-Phase PDU</OPTION>
+					<OPTION value="Transformer"> Transformer</OPTION>
+					<OPTION value="Multi Source" > Multi-Source PDU</OPTION>
+					<OPTION value="Variac"> Variac PDU</OPTION>						
+				</SELECT>
+				<p>Select Frequency</p>
+				<SELECT name="sel_freq">
+					<OPTION value="60" selected> 60Hz</OPTION>
+					<OPTION value="400"> 400Hz</OPTION>
+					<OPTION value="60/400" > 60/400Hz</OPTION>
+				</SELECT>				
+				<BR><BR>
+				<INPUT type="button" value="Query Database" onclick="query()">	
+				</FIELDSET>				
+			</FORM>
+			
+			<SCRIPT language="javascript">
+				function populate() {
+					document.form1.button.value= "populate"
+					form1.submit()
+				}
+				function update() {
+					document.form1.button.value= "update"
+					form1.submit()
+				}
+				function query() {
+					document.form1.button.value= "query"
+					form1.submit()
+				}	
+			</SCRIPT>			
+		</LEFT>
+	</BODY>
+</HTML>
